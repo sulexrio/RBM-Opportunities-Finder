@@ -30,6 +30,22 @@ jobs:
       - name: Fetch global remote boards (Remotive, RemoteOK, Arbeitnow)
         run: node scripts/fetch-remote-global.js
 
+      - name: Fetch Jooble (global local-board aggregator)
+        run: node scripts/fetch-jooble.js
+        env:
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+
+      - name: Fetch Adzuna (recruiter/outsourcing-heavy aggregator)
+        run: node scripts/fetch-adzuna.js
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+
+      - name: Fetch Careerjet (local boards, MENA/Asia/Africa strength)
+        run: node scripts/fetch-careerjet.js
+        env:
+          CAREERJET_AFFID: ${{ secrets.CAREERJET_AFFID }}
+
       - name: Merge, verify, classify sponsorship, flag scam risk
         run: node scripts/merge.js
 
