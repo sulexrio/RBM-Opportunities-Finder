@@ -1,4 +1,4 @@
-const CACHE_NAME = "opportunity-finder-v1";
+const CACHE_NAME = "opportunity-finder-v2";
 const CORE_ASSETS = ["/", "/index.html", "/app.js", "/styles.css", "/data/jobs.json"];
 
 self.addEventListener("install", (event) => {
@@ -10,9 +10,11 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
-    )
+    caches.keys()
+      .then((keys) =>
+        Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+      )
+      .then(() => self.clients.claim()) // take control of already-open tabs immediately
   );
 });
 
@@ -35,7 +37,16 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Network-first for everything else too (HTML/JS/CSS) — so UI updates
+  // show up immediately on next load instead of being stuck on an old
+  // cached copy. Cache is only used as a fallback when offline.
   event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
+    fetch(event.request)
+      .then((res) => {
+        const clone = res.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return res;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
