@@ -76,12 +76,10 @@ function main() {
   const eures = loadJson("data/raw/eures.json");
   const canada = loadJson("data/raw/canada.json");
   const globalRemote = loadJson("data/raw/global-remote.json");
-  const jooble = loadJson("data/raw/jooble.json");
-  const adzuna = loadJson("data/raw/adzuna.json");
-  const careerjet = loadJson("data/raw/careerjet.json");
+  const aggregators = loadJson("data/raw/aggregators.json");
   const ukSponsors = loadJson("data/raw/uk-sponsors.json", {});
 
-  let allJobs = [...eures, ...canada, ...globalRemote, ...jooble, ...adzuna, ...careerjet];
+  let allJobs = [...eures, ...canada, ...globalRemote, ...aggregators];
 
   allJobs = allJobs.map((job) => ({
     ...job,

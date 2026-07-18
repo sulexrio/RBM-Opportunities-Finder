@@ -2,7 +2,7 @@ name: Fetch and merge opportunities
 
 on:
   schedule:
-    - cron: "0 * * * *"   # every hour, on the hour — free, public repos have unlimited Actions minutes
+    - cron: "0 * * * *"   # every hour — free, public repos have unlimited Actions minutes
   workflow_dispatch: {}    # lets you trigger a manual run from GitHub UI
 
 permissions:
@@ -30,21 +30,13 @@ jobs:
       - name: Fetch global remote boards (Remotive, RemoteOK, Arbeitnow)
         run: node scripts/fetch-remote-global.js
 
-      - name: Fetch Jooble (global local-board aggregator)
-        run: node scripts/fetch-jooble.js
+      - name: Fetch aggregators (Jooble, Careerjet, Adzuna — local boards + recruiters worldwide)
         env:
           JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
-
-      - name: Fetch Adzuna (recruiter/outsourcing-heavy aggregator)
-        run: node scripts/fetch-adzuna.js
-        env:
+          CAREERJET_AFFID: ${{ secrets.CAREERJET_AFFID }}
           ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
-
-      - name: Fetch Careerjet (local boards, MENA/Asia/Africa strength)
-        run: node scripts/fetch-careerjet.js
-        env:
-          CAREERJET_AFFID: ${{ secrets.CAREERJET_AFFID }}
+        run: node scripts/fetch-aggregators.js
 
       - name: Merge, verify, classify sponsorship, flag scam risk
         run: node scripts/merge.js
