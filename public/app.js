@@ -4,6 +4,7 @@ const state = {
   search: "",
   country: "ALL",
   hideCitizensOnly: true,
+  visibleCount: 50,
 };
 
 async function loadData() {
@@ -123,7 +124,27 @@ function render() {
     return;
   }
 
-  filtered.forEach((job) => container.appendChild(jobCard(job)));
+  const visible = filtered.slice(0, state.visibleCount);
+  visible.forEach((job) => container.appendChild(jobCard(job)));
+
+  const countLabel = document.createElement("div");
+  countLabel.className = "empty-state";
+  countLabel.style.padding = "16px 0";
+  countLabel.textContent = `Showing ${visible.length} of ${filtered.length} matching postings`;
+  container.appendChild(countLabel);
+
+  if (filtered.length > state.visibleCount) {
+    const loadMoreBtn = document.createElement("button");
+    loadMoreBtn.textContent = `Load 50 more`;
+    loadMoreBtn.className = "job-actions";
+    loadMoreBtn.style.cssText =
+      "display:block;width:100%;padding:12px;border-radius:8px;border:1px solid #263349;background:#131C2E;color:#E7E9EE;font-weight:600;cursor:pointer;";
+    loadMoreBtn.addEventListener("click", () => {
+      state.visibleCount += 50;
+      render();
+    });
+    container.appendChild(loadMoreBtn);
+  }
 }
 
 function renderManualSources() {
@@ -138,16 +159,19 @@ function renderManualSources() {
 
 document.getElementById("search").addEventListener("input", (e) => {
   state.search = e.target.value;
+  state.visibleCount = 50;
   render();
 });
 
 document.getElementById("countryFilter").addEventListener("change", (e) => {
   state.country = e.target.value;
+  state.visibleCount = 50;
   render();
 });
 
 document.getElementById("hideCitizensOnly").addEventListener("change", (e) => {
   state.hideCitizensOnly = e.target.checked;
+  state.visibleCount = 50;
   render();
 });
 
