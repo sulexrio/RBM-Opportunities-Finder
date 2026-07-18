@@ -59,11 +59,30 @@ independently without taking the whole system down.
 
 | Source | Status |
 |---|---|
-| EURES (15 EU/EEA countries) | Real free public API, structured JSON, reliable |
+| EURES (all ~31 EU/EEA countries) | Real free public API, structured JSON, reliable |
+| Remotive / RemoteOK / Arbeitnow (global remote jobs) | Real free public APIs, no key needed — these aren't tied to any one country's visa law, which is the real fix for "citizens only" listings |
 | UK sponsor register | Real free official CSV, refreshed by Home Office |
-| Canada Job Bank | Public search pages only — no open self-serve API. The fetcher scrapes respectfully (see note in `fetch-canada.js`); consider applying for their free partner XML feed for reliability |
-| Gulf states (Saudi, UAE, Qatar, Kuwait) | No official public registry — `data/manual-sources.json` holds a curated list of agencies/portals you vet yourself. **Read the safety note below.** |
-| Singapore, Japan, Hong Kong, Australia, NZ | Mix of official portals — see `data/manual-sources.json`, expand as you vet each one |
+| Canada Job Bank | Public search pages only — no open self-serve API. Fetcher scrapes respectfully; consider applying for their free partner XML feed for reliability |
+| Gulf states (Saudi, UAE, Qatar, Kuwait, Bahrain, Oman) | No official public registry — `data/manual-sources.json` holds a curated list of agencies/portals you vet yourself. **Read the safety note below.** |
+| Singapore, Japan, Hong Kong, Australia, NZ, India, Malaysia, Thailand, South Korea | Mix of official portals — see `data/manual-sources.json` |
+| Nigeria, South Africa, Egypt, Kenya, Ghana, Morocco | Government labour portals + major local job boards, curated in `data/manual-sources.json` |
+
+## Sponsorship filtering (new)
+
+Every job now gets a `sponsorshipStatus`:
+- **citizens-only** — the listing itself says it needs existing right-to-work, no sponsorship, etc. Hidden by default in the app (toggle it back on with the checkbox at the top).
+- **high-confidence** — the listing explicitly mentions visa sponsorship, relocation, accommodation, or flights.
+- **remote-unrestricted** — from the global remote boards, not tied to a country's labor law.
+- **unclear** — matched a search keyword but doesn't clearly say either way; use your judgment.
+
+This is keyword-based, not perfect — always confirm on the actual listing before applying.
+
+## What changed in this update
+- EURES coverage widened from 15 to all ~31 EU/EEA countries
+- Added global remote-first sources (Remotive, RemoteOK, Arbeitnow) — the actual fix for location-locked/citizens-only results
+- Added Middle East, Asia, and African country portals to the curated list
+- Refresh cycle shortened from every 4 hours to hourly (free — public repos get unlimited GitHub Actions minutes)
+- Added citizens-only detection so you can filter those out instead of opening each listing to find out
 
 ## Safety note on Gulf/Asia "visa + ticket + accommodation" listings
 

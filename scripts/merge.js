@@ -11,6 +11,37 @@ const SCAM_SIGNAL_PATTERNS = [
   /registration fee required/i,
 ];
 
+// Phrases meaning "you likely can't apply from abroad" — this is the
+// direct fix for jobs that matched a search keyword but actually exclude
+// foreign applicants. Flag these clearly instead of making you open each one.
+const CITIZENS_ONLY_PATTERNS = [
+  /must (already )?have (the )?right to work/i,
+  /(eu|uk|us|swiss|schengen) citizens? only/i,
+  /no (visa )?sponsorship (is )?(available|provided|offered)/i,
+  /must be (a )?(local|resident|citizen)/i,
+  /work permit required prior to application/i,
+  /unable to sponsor/i,
+];
+
+// Phrases meaning this listing genuinely offers sponsorship/relocation —
+// the positive signal, used to rank real matches above coincidental ones.
+const SPONSOR_SIGNAL_PATTERNS = [
+  /visa sponsorship (available|provided|offered)/i,
+  /relocation (package|assistance|support|provided)/i,
+  /accommodation (provided|included)/i,
+  /flight(s)? (ticket )?(provided|included|covered)/i,
+  /work permit (assistance|support|sponsorship)/i,
+  /open to international applicants/i,
+];
+
+function classifySponsorship(job) {
+  const text = `${job.title} ${job.description}`;
+  if (CITIZENS_ONLY_PATTERNS.some((p) => p.test(text))) return "citizens-only";
+  if (SPONSOR_SIGNAL_PATTERNS.some((p) => p.test(text))) return "high-confidence";
+  if (job.country === "REMOTE") return "remote-unrestricted";
+  return "unclear";
+}
+
 function loadJson(path, fallback = []) {
   try {
     return JSON.parse(fs.readFileSync(path, "utf-8"));
@@ -44,14 +75,16 @@ function dedupe(jobs) {
 function main() {
   const eures = loadJson("data/raw/eures.json");
   const canada = loadJson("data/raw/canada.json");
+  const globalRemote = loadJson("data/raw/global-remote.json");
   const ukSponsors = loadJson("data/raw/uk-sponsors.json", {});
 
-  let allJobs = [...eures, ...canada];
+  let allJobs = [...eures, ...canada, ...globalRemote];
 
   allJobs = allJobs.map((job) => ({
     ...job,
     scamRisk: flagScamRisk(job),
     sponsorVerified: verifyUkSponsor(job, ukSponsors),
+    sponsorshipStatus: classifySponsorship(job),
     fetchedAt: new Date().toISOString(),
   }));
 

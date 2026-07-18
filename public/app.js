@@ -1,4 +1,10 @@
-const state = { allJobs: [], manualSources: [], search: "", country: "ALL" };
+const state = {
+  allJobs: [],
+  manualSources: [],
+  search: "",
+  country: "ALL",
+  hideCitizensOnly: true,
+};
 
 async function loadData() {
   const res = await fetch("data/jobs.json", { cache: "no-store" });
@@ -27,7 +33,9 @@ function matchesFilters(job) {
     job.employer?.toLowerCase().includes(q) ||
     job.description?.toLowerCase().includes(q);
   const matchesCountry = state.country === "ALL" || job.country === state.country;
-  return matchesSearch && matchesCountry;
+  const matchesCitizenFilter =
+    !state.hideCitizensOnly || job.sponsorshipStatus !== "citizens-only";
+  return matchesSearch && matchesCountry && matchesCitizenFilter;
 }
 
 function copyForAI(job) {
@@ -55,6 +63,13 @@ function jobCard(job) {
 
   const badges = [];
   badges.push(`<span class="badge country">${job.country}</span>`);
+  if (job.sponsorshipStatus === "citizens-only") {
+    badges.push(`<span class="badge risk">🚫 citizens/right-to-work only</span>`);
+  } else if (job.sponsorshipStatus === "high-confidence") {
+    badges.push(`<span class="badge verified">✓ sponsorship/relocation mentioned</span>`);
+  } else if (job.sponsorshipStatus === "remote-unrestricted") {
+    badges.push(`<span class="badge verified">🌐 remote, not location-locked</span>`);
+  }
   if (job.sponsorVerified === true) {
     badges.push(`<span class="badge verified">✓ verified sponsor</span>`);
   } else if (job.sponsorVerified === false) {
@@ -89,10 +104,19 @@ function jobCard(job) {
   return card;
 }
 
+const STATUS_RANK = {
+  "high-confidence": 0,
+  "remote-unrestricted": 1,
+  unclear: 2,
+  "citizens-only": 3,
+};
+
 function render() {
   const container = document.getElementById("jobs");
   container.innerHTML = "";
-  const filtered = state.allJobs.filter(matchesFilters);
+  const filtered = state.allJobs
+    .filter(matchesFilters)
+    .sort((a, b) => (STATUS_RANK[a.sponsorshipStatus] ?? 2) - (STATUS_RANK[b.sponsorshipStatus] ?? 2));
 
   if (filtered.length === 0) {
     container.innerHTML = `<div class="empty-state">No postings match yet. Try a broader search, or check the curated portals below.</div>`;
@@ -119,6 +143,11 @@ document.getElementById("search").addEventListener("input", (e) => {
 
 document.getElementById("countryFilter").addEventListener("change", (e) => {
   state.country = e.target.value;
+  render();
+});
+
+document.getElementById("hideCitizensOnly").addEventListener("change", (e) => {
+  state.hideCitizensOnly = e.target.checked;
   render();
 });
 

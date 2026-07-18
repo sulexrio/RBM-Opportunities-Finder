@@ -10,10 +10,12 @@ import fs from "fs";
 const EURES_ENDPOINT =
   "https://europa.eu/eures/api/jv-searchengine/public/jv-search/search";
 
-// ISO country codes EURES recognizes for your priority list.
+// All EURES-participating countries (EU27 + EEA/associated states).
+// This replaces the original 15-country priority list with full coverage.
 const COUNTRIES = [
-  "de", "fr", "lu", "fi", "ch", "se", "is",
-  "at", "nl", "it", "pl", "lt", "es", "no",
+  "at", "be", "bg", "hr", "cy", "cz", "dk", "ee", "fi", "fr",
+  "de", "gr", "hu", "is", "ie", "it", "lv", "li", "lt", "lu",
+  "mt", "nl", "no", "pl", "pt", "ro", "sk", "si", "es", "se", "ch",
 ];
 
 // Keywords capturing your criteria: remote work, sponsorship, relocation.

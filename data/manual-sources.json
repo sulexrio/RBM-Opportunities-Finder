@@ -1,5 +1,5 @@
 {
-  "note": "These regions don't have open, automatable APIs. This file is a curated list of official/legitimate portals to check manually or scrape individually once vetted. The PWA displays these as direct links grouped by country, alongside the auto-fetched EURES/UK/Canada listings.",
+  "note": "These regions don't have open, automatable APIs. This file is a curated list of official/legitimate portals to check manually or scrape individually once vetted. The PWA displays these as direct links grouped by country, alongside the auto-fetched EURES/global-remote listings.",
   "sources": [
     { "country": "US", "name": "DOL LCA/H-1B Disclosure Data (which companies actually sponsor)", "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance", "type": "official-data" },
     { "country": "US", "name": "USAJobs (federal roles)", "url": "https://www.usajobs.gov", "type": "official-board" },
@@ -7,11 +7,26 @@
     { "country": "AE", "name": "UAE Ministry of Human Resources & Emiratisation - job portal", "url": "https://www.mohre.gov.ae", "type": "official-board" },
     { "country": "QA", "name": "Qatar Ministry of Labour careers info", "url": "https://www.mol.gov.qa", "type": "official-info" },
     { "country": "KW", "name": "Kuwait Public Authority for Manpower", "url": "https://www.papftc.gov.kw", "type": "official-info" },
+    { "country": "BH", "name": "Bahrain LMRA (Labour Market Regulatory Authority)", "url": "https://www.lmra.bh", "type": "official-info" },
+    { "country": "OM", "name": "Oman Ministry of Labour", "url": "https://www.manpower.gov.om", "type": "official-info" },
     { "country": "SG", "name": "MyCareersFuture (government job bank)", "url": "https://www.mycareersfuture.gov.sg", "type": "official-board" },
     { "country": "JP", "name": "Hello Work (national employment service)", "url": "https://www.hellowork.mhlw.go.jp", "type": "official-board" },
     { "country": "JP", "name": "JITCO - Specified Skilled Worker program", "url": "https://www.jitco.or.jp", "type": "official-info" },
     { "country": "HK", "name": "Labour Department interactive employment service", "url": "https://www2.jobs.labour.gov.hk", "type": "official-board" },
     { "country": "AU", "name": "Workforce Australia + approved sponsor register", "url": "https://www.workforceaustralia.gov.au", "type": "official-board" },
-    { "country": "NZ", "name": "Immigration NZ Accredited Employer list", "url": "https://www.immigration.govt.nz", "type": "official-info" }
+    { "country": "NZ", "name": "Immigration NZ Accredited Employer list", "url": "https://www.immigration.govt.nz", "type": "official-info" },
+    { "country": "IN", "name": "National Career Service (government job portal)", "url": "https://www.ncs.gov.in", "type": "official-board" },
+    { "country": "MY", "name": "MYFutureJobs (government job portal)", "url": "https://www.myfuturejobs.gov.my", "type": "official-board" },
+    { "country": "TH", "name": "Thailand Department of Employment", "url": "https://www.doe.go.th", "type": "official-info" },
+    { "country": "KR", "name": "Work24 (national employment service)", "url": "https://www.work24.go.kr", "type": "official-board" },
+    { "country": "NG", "name": "Nigeria Federal Ministry of Labour and Employment - job portal", "url": "https://labour.gov.ng", "type": "official-info" },
+    { "country": "NG", "name": "Jobberman (largest Nigerian job board, incl. int'l/remote roles)", "url": "https://www.jobberman.com", "type": "board" },
+    { "country": "ZA", "name": "South Africa Department of Employment and Labour", "url": "https://www.labour.gov.za", "type": "official-info" },
+    { "country": "ZA", "name": "Careers24 (major South African job board)", "url": "https://www.careers24.com", "type": "board" },
+    { "country": "EG", "name": "Egypt Ministry of Manpower", "url": "https://www.manpower.gov.eg", "type": "official-info" },
+    { "country": "EG", "name": "Wuzzuf (major Egyptian/MENA job board)", "url": "https://wuzzuf.net", "type": "board" },
+    { "country": "KE", "name": "Kenya National Employment Authority", "url": "https://nea.go.ke", "type": "official-info" },
+    { "country": "GH", "name": "Ghana Labour Department", "url": "https://www.mesw.gov.gh", "type": "official-info" },
+    { "country": "MA", "name": "ANAPEC (Morocco national employment agency)", "url": "https://www.anapec.org", "type": "official-board" }
   ]
 }
