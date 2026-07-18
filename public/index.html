@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opportunity Finder</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0B1120" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Opportunity Finder</h1>
+    <p>Remote + visa-sponsorship roles across your priority countries — verified where possible.</p>
+  </header>
+
+  <div class="controls">
+    <input id="search" type="text" placeholder="Search title, employer, keyword…" />
+    <select id="countryFilter"><option value="ALL">All countries</option></select>
+  </div>
+
+  <div class="status-bar" id="status">Loading…</div>
+
+  <div id="jobs"></div>
+
+  <div class="manual-sources">
+    <h2>Curated portals (no open API — check directly)</h2>
+    <ul id="manualSourcesList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+name: Fetch and merge opportunities
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"   # every 4 hours, free on GitHub Actions
+  workflow_dispatch: {}       # lets you trigger a manual run from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch EURES (15 EU/EEA countries)
+        run: node scripts/fetch-eures.js
+
+      - name: Fetch UK sponsor register
+        run: node scripts/fetch-uk-sponsors.js
+
+      - name: Fetch Canada Job Bank (best-effort)
+        run: node scripts/fetch-canada.js
+
+      - name: Merge, verify, flag scam risk
+        run: node scripts/merge.js
+
+      - name: Translate non-English postings
+        run: node scripts/translate.js
+
+      - name: Commit updated data
+        run: |
+          git config user.name "opportunity-finder-bot"
+          git config user.email "actions@github.com"
+          git add data/jobs.json public/data/jobs.json data/raw/*.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update job data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push

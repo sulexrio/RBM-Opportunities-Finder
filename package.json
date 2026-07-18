@@ -1,0 +1,17 @@
+{
+  "name": "opportunity-finder",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fetch:eures": "node scripts/fetch-eures.js",
+    "fetch:uk": "node scripts/fetch-uk-sponsors.js",
+    "fetch:canada": "node scripts/fetch-canada.js",
+    "merge": "node scripts/merge.js",
+    "translate": "node scripts/translate.js",
+    "pipeline": "npm run fetch:eures && npm run fetch:uk && npm run fetch:canada && npm run merge && npm run translate"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Opportunity Finder",
+  "short_name": "Opportunities",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#0B1120",
+  "description": "Remote work and visa-sponsorship opportunities across your priority countries.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

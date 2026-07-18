@@ -1,0 +1,193 @@
+/* Design tokens
+   Colors: #0B1120 (ink), #131C2E (panel), #C9A227 (stamp gold),
+           #2DD4BF (verified teal), #E85D4E (risk red), #8A93A6 (muted text)
+   Type: 'Space Grotesk' for display, 'Inter' for body, 'JetBrains Mono'
+         for data/country codes/dates — the whole card reads like a
+         travel manifest, not a generic job-board list.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0B1120;
+  color: #E7E9EE;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  padding: 28px 20px 16px;
+  border-bottom: 1px solid #1E293B;
+}
+
+header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+header p {
+  margin: 0;
+  color: #8A93A6;
+  font-size: 0.9rem;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #1E293B;
+}
+
+.controls input, .controls select {
+  background: #131C2E;
+  border: 1px solid #263349;
+  color: #E7E9EE;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+}
+
+.controls input { flex: 1; min-width: 160px; }
+
+.status-bar {
+  padding: 10px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #8A93A6;
+  border-bottom: 1px solid #1E293B;
+}
+
+#jobs {
+  padding: 16px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.job-card {
+  background: #131C2E;
+  border: 1px solid #263349;
+  border-radius: 12px;
+  padding: 18px;
+  position: relative;
+}
+
+.job-card.scam-risk {
+  border-color: #E85D4E;
+}
+
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.job-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+}
+
+.job-employer {
+  color: #8A93A6;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.job-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #8A93A6;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #263349;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.badge.verified { background: rgba(45, 212, 191, 0.12); color: #2DD4BF; }
+.badge.risk { background: rgba(232, 93, 78, 0.12); color: #E85D4E; }
+.badge.country { background: rgba(201, 162, 39, 0.12); color: #C9A227; }
+
+.job-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.job-actions a, .job-actions button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 7px;
+  border: 1px solid #263349;
+  background: transparent;
+  color: #E7E9EE;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.job-actions a.primary {
+  background: #C9A227;
+  border-color: #C9A227;
+  color: #0B1120;
+}
+
+.manual-sources {
+  padding: 16px 20px 40px;
+}
+
+.manual-sources h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+}
+
+.manual-sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.manual-sources li {
+  background: #131C2E;
+  border: 1px solid #263349;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+}
+
+.manual-sources a { color: #C9A227; }
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8A93A6;
+}

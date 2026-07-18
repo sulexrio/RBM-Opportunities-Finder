@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-07-18T08:06:29.188Z",
+  "totalJobs": 0,
+  "jobs": [],
+  "manualSources": [
+    {
+      "country": "US",
+      "name": "DOL LCA/H-1B Disclosure Data (which companies actually sponsor)",
+      "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
+      "type": "official-data"
+    },
+    {
+      "country": "US",
+      "name": "USAJobs (federal roles)",
+      "url": "https://www.usajobs.gov",
+      "type": "official-board"
+    },
+    {
+      "country": "SA",
+      "name": "Taqat national employment platform",
+      "url": "https://www.taqat.sa",
+      "type": "official-board"
+    },
+    {
+      "country": "AE",
+      "name": "UAE Ministry of Human Resources & Emiratisation - job portal",
+      "url": "https://www.mohre.gov.ae",
+      "type": "official-board"
+    },
+    {
+      "country": "QA",
+      "name": "Qatar Ministry of Labour careers info",
+      "url": "https://www.mol.gov.qa",
+      "type": "official-info"
+    },
+    {
+      "country": "KW",
+      "name": "Kuwait Public Authority for Manpower",
+      "url": "https://www.papftc.gov.kw",
+      "type": "official-info"
+    },
+    {
+      "country": "SG",
+      "name": "MyCareersFuture (government job bank)",
+      "url": "https://www.mycareersfuture.gov.sg",
+      "type": "official-board"
+    },
+    {
+      "country": "JP",
+      "name": "Hello Work (national employment service)",
+      "url": "https://www.hellowork.mhlw.go.jp",
+      "type": "official-board"
+    },
+    {
+      "country": "JP",
+      "name": "JITCO - Specified Skilled Worker program",
+      "url": "https://www.jitco.or.jp",
+      "type": "official-info"
+    },
+    {
+      "country": "HK",
+      "name": "Labour Department interactive employment service",
+      "url": "https://www2.jobs.labour.gov.hk",
+      "type": "official-board"
+    },
+    {
+      "country": "AU",
+      "name": "Workforce Australia + approved sponsor register",
+      "url": "https://www.workforceaustralia.gov.au",
+      "type": "official-board"
+    },
+    {
+      "country": "NZ",
+      "name": "Immigration NZ Accredited Employer list",
+      "url": "https://www.immigration.govt.nz",
+      "type": "official-info"
+    }
+  ]
+}
