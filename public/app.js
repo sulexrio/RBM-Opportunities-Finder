@@ -7,7 +7,15 @@ const state = {
   visibleCount: 50,
 };
 
+function showSkeleton() {
+  const container = document.getElementById("jobs");
+  container.innerHTML = Array(4)
+    .fill('<div class="skeleton-card"></div>')
+    .join('<div style="height:14px;"></div>');
+}
+
 async function loadData() {
+  showSkeleton();
   const res = await fetch("data/jobs.json", { cache: "no-store" });
   const data = await res.json();
   state.allJobs = data.jobs || [];
@@ -112,6 +120,13 @@ const STATUS_RANK = {
   "citizens-only": 3,
 };
 
+const SECTION_LABELS = {
+  "high-confidence": "✓ Sponsorship / relocation mentioned",
+  "remote-unrestricted": "🌐 Remote — not location-locked",
+  unclear: "Other matches",
+  "citizens-only": "🚫 Citizens / right-to-work only",
+};
+
 function render() {
   const container = document.getElementById("jobs");
   container.innerHTML = "";
@@ -125,7 +140,20 @@ function render() {
   }
 
   const visible = filtered.slice(0, state.visibleCount);
-  visible.forEach((job) => container.appendChild(jobCard(job)));
+
+  let currentStatus = null;
+  visible.forEach((job) => {
+    const status = job.sponsorshipStatus || "unclear";
+    if (status !== currentStatus) {
+      currentStatus = status;
+      const countInSection = filtered.filter((j) => (j.sponsorshipStatus || "unclear") === status).length;
+      const header = document.createElement("div");
+      header.className = "section-header";
+      header.innerHTML = `${SECTION_LABELS[status] || "Other"} <span class="count">(${countInSection})</span>`;
+      container.appendChild(header);
+    }
+    container.appendChild(jobCard(job));
+  });
 
   const countLabel = document.createElement("div");
   countLabel.className = "empty-state";
@@ -178,5 +206,13 @@ document.getElementById("hideCitizensOnly").addEventListener("change", (e) => {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
 }
+
+const backToTopBtn = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  backToTopBtn.classList.toggle("visible", window.scrollY > 600);
+});
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 loadData().then(renderManualSources);

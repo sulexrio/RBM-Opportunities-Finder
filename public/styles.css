@@ -23,6 +23,14 @@ header {
   border-bottom: 1px solid #1E293B;
 }
 
+.sticky-controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0B1120;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
 header h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
@@ -190,4 +198,85 @@ header p {
   text-align: center;
   padding: 60px 20px;
   color: #8A93A6;
+}
+
+/* Skeleton loading cards shown while jobs.json is being fetched */
+.skeleton-card {
+  background: #131C2E;
+  border: 1px solid #263349;
+  border-radius: 12px;
+  padding: 18px;
+  height: 92px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skeleton-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(201,162,39,0.08), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Section headers grouping jobs by sponsorship status */
+.section-header {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #E7E9EE;
+  margin: 22px 0 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #1E293B;
+}
+
+.section-header .count {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  color: #8A93A6;
+  font-size: 0.8rem;
+}
+
+/* Press feedback so taps feel responsive immediately */
+.job-card {
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+
+.job-card:active {
+  transform: scale(0.99);
+  border-color: #C9A227;
+}
+
+.job-actions a:active, .job-actions button:active {
+  transform: scale(0.96);
+}
+
+/* Floating back-to-top button */
+#backToTop {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #C9A227;
+  color: #0B1120;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#backToTop.visible {
+  display: flex;
 }

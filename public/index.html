@@ -15,19 +15,21 @@
     <p>Remote + visa-sponsorship roles across your priority countries — verified where possible.</p>
   </header>
 
-  <div class="controls">
-    <input id="search" type="text" placeholder="Search title, employer, keyword…" />
-    <select id="countryFilter"><option value="ALL">All countries</option></select>
-  </div>
+  <div class="sticky-controls">
+    <div class="controls">
+      <input id="search" type="text" placeholder="Search title, employer, keyword…" />
+      <select id="countryFilter"><option value="ALL">All countries</option></select>
+    </div>
 
-  <div class="controls" style="padding-top:0;">
-    <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:#8A93A6;">
-      <input type="checkbox" id="hideCitizensOnly" checked />
-      Hide "citizens/right-to-work only" listings
-    </label>
-  </div>
+    <div class="controls" style="padding-top:0;">
+      <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:#8A93A6;">
+        <input type="checkbox" id="hideCitizensOnly" checked />
+        Hide "citizens/right-to-work only" listings
+      </label>
+    </div>
 
-  <div class="status-bar" id="status">Loading…</div>
+    <div class="status-bar" id="status">Loading…</div>
+  </div>
 
   <div id="jobs"></div>
 
@@ -35,6 +37,8 @@
     <h2>Curated portals (no open API — check directly)</h2>
     <ul id="manualSourcesList"></ul>
   </div>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="app.js"></script>
 </body>
