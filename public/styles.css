@@ -391,3 +391,48 @@ header p {
 #backToTop.visible {
   display: flex;
 }
+
+.cv-section {
+  padding: 12px 20px;
+  border-bottom: 1px solid #1E293B;
+  background: rgba(201,162,39,0.04);
+}
+
+.cv-upload-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #C9A227;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.cv-section input[type="file"] {
+  font-size: 0.8rem;
+  color: #8A93A6;
+  width: 100%;
+}
+
+.cv-status {
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #2DD4BF;
+}
+
+.cv-status.error { color: #E85D4E; }
+
+.cv-section button {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #263349;
+  background: transparent;
+  color: #E7E9EE;
+  cursor: pointer;
+}
+
+.badge.match-score {
+  background: rgba(201,162,39,0.15);
+  color: #C9A227;
+}

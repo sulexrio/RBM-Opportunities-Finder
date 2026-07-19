@@ -4,8 +4,11 @@ const state = {
   search: "",
   country: "ALL",
   hideCitizensOnly: true,
-  visibleCount: 50,
   recentOnly: false,
+  visibleCount: 50,
+  cvKeywords: null, // Map<word, weight> once a CV is loaded, else null
+  cvText: "",
+  cvFilename: "",
 };
 
 function showSkeleton() {
@@ -35,12 +38,116 @@ function populateCountryFilter() {
     countries.map((c) => `<option value="${c}">${c}</option>`).join("");
 }
 
+// ---- CV matching (all client-side, nothing ever leaves your phone) ----
+
+const STOPWORDS = new Set(
+  ("a an the and or but if of to in on for with at by from as is are was were be been " +
+   "this that these those it its i you we they he she your our their will shall can " +
+   "may would could should have has had do does did not no yes about into over under " +
+   "than then so such also more most other some any all each every job role work team " +
+   "years experience skills including etc using use used via per within across")
+    .split(" ")
+);
+
+function tokenize(text) {
+  return (text || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && !STOPWORDS.has(w));
+}
+
+function buildCvWeights(text) {
+  const tokens = tokenize(text);
+  const freq = new Map();
+  tokens.forEach((t) => freq.set(t, (freq.get(t) || 0) + 1));
+  return freq;
+}
+
+function matchScore(job, cvWeights) {
+  if (!cvWeights) return 0;
+  const jobTokens = new Set(tokenize(`${job.title} ${job.description}`));
+  let score = 0;
+  jobTokens.forEach((t) => {
+    if (cvWeights.has(t)) score += cvWeights.get(t);
+  });
+  return score / Math.sqrt(jobTokens.size + 10);
+}
+
+async function extractTextFromFile(file) {
+  const ext = file.name.split(".").pop().toLowerCase();
+
+  if (ext === "txt") {
+    return await file.text();
+  }
+
+  if (ext === "pdf") {
+    if (typeof pdfjsLib === "undefined") {
+      throw new Error("PDF reader failed to load — check your connection and try again.");
+    }
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    const buffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+    let text = "";
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      text += content.items.map((it) => it.str).join(" ") + "\n";
+    }
+    return text;
+  }
+
+  if (ext === "docx") {
+    if (typeof mammoth === "undefined") {
+      throw new Error("Word reader failed to load — check your connection and try again.");
+    }
+    const buffer = await file.arrayBuffer();
+    const result = await mammoth.extractRawText({ arrayBuffer: buffer });
+    return result.value;
+  }
+
+  throw new Error("Unsupported file type — please upload a PDF, .docx, or .txt file.");
+}
+
 function isWithinDays(dateStr, days) {
   if (!dateStr) return false;
   const posted = new Date(dateStr);
-  if (isNaN(posted)) return false;
+  if (isNaN(posted.getTime())) return false;
   const diffMs = Date.now() - posted.getTime();
   return diffMs >= 0 && diffMs <= days * 24 * 60 * 60 * 1000;
+}
+
+function copyCvMatchesForAI() {
+  const cvActive = document.getElementById("cvMatchToggle").checked;
+  const filtered = state.allJobs
+    .filter(matchesFilters)
+    .map((job) => ({ ...job, _score: matchScore(job, state.cvKeywords) }))
+    .sort((a, b) => b._score - a._score)
+    .slice(0, 15);
+
+  const jobsBlock = filtered
+    .map(
+      (j, i) =>
+        `${i + 1}. ${j.title} — ${j.employer} (${j.country}, via ${j.source})\n   URL: ${j.url}\n   Snippet: ${(j.description || "").replace(/<[^>]+>/g, "").slice(0, 300)}`
+    )
+    .join("\n\n");
+
+  const prompt = `Here is my CV text, followed by ${filtered.length} job postings my app ranked as closest keyword matches (simple keyword overlap, not real judgment). Please:
+1. Do a real precision match — which of these genuinely fit my actual experience and skills, not just shared words?
+2. Rank the top 5-8 by genuine fit, and say why for each.
+3. Flag any that look like they need skills/experience I don't actually have.
+4. For the top matches, note anything about visa sponsorship, relocation, or remote status mentioned.
+
+--- MY CV ---
+${state.cvText.slice(0, 4000)}
+
+--- CANDIDATE POSTINGS ---
+${jobsBlock}`;
+
+  navigator.clipboard.writeText(prompt).then(() => {
+    alert("Copied — paste into Claude or ChatGPT for the real precision match.");
+  });
 }
 
 function matchesFilters(job) {
@@ -58,16 +165,11 @@ function matchesFilters(job) {
 }
 
 function copyForAI(job) {
-  const cv = typeof loadCv === "function" ? loadCv() : null;
-  const cvSection = cv
-    ? `\n\nMy background (keywords from my CV): ${cv.keywords.join(", ")}\nPlease also assess honestly how well this specific role fits my background, and what's missing or a stretch.`
-    : "";
-
   const prompt = `Here's a job posting I found. Please:
 1. Translate it fully to English if it isn't already.
 2. Tell me honestly whether this looks like a legitimate opportunity or has scam warning signs.
 3. Summarize what's required and how to apply.
-4. Draft a short outreach message I could send.${cvSection}
+4. Draft a short outreach message I could send.
 
 Title: ${job.title}
 Employer: ${job.employer}
@@ -87,8 +189,8 @@ function jobCard(job) {
 
   const badges = [];
   badges.push(`<span class="badge country">${job.country}</span>`);
-  if (typeof job.cvScore === "number" && job.cvScore > 0) {
-    badges.push(`<span class="badge verified">🎯 CV fit score: ${job.cvScore}</span>`);
+  if (typeof job._score === "number" && job._score > 0) {
+    badges.push(`<span class="badge match-score">🎯 CV fit: ${job._score.toFixed(1)}</span>`);
   }
   if (job.sponsorshipStatus === "citizens-only") {
     badges.push(`<span class="badge risk">🚫 citizens/right-to-work only</span>`);
@@ -148,17 +250,16 @@ const SECTION_LABELS = {
 function render() {
   const container = document.getElementById("jobs");
   container.innerHTML = "";
-  const cv = typeof loadCv === "function" ? loadCv() : null;
+
   const matchToggle = document.getElementById("cvMatchToggle");
-  const useCvSort = cv && matchToggle && matchToggle.checked;
+  const useCvSort = state.cvKeywords && matchToggle && matchToggle.checked;
 
   let filtered = state.allJobs.filter(matchesFilters);
 
   if (useCvSort) {
     filtered = filtered
-      .map((job) => ({ job, score: scoreJobAgainstKeywords(job, cv.keywords) }))
-      .sort((a, b) => b.score - a.score)
-      .map(({ job, score }) => ({ ...job, cvScore: score }));
+      .map((job) => ({ ...job, _score: matchScore(job, state.cvKeywords) }))
+      .sort((a, b) => b._score - a._score);
   } else {
     filtered = filtered.sort(
       (a, b) => (STATUS_RANK[a.sponsorshipStatus] ?? 2) - (STATUS_RANK[b.sponsorshipStatus] ?? 2)
@@ -248,10 +349,47 @@ document.getElementById("recentOnly").addEventListener("change", (e) => {
   render();
 });
 
-window.onCvChanged = () => {
+document.getElementById("cvFile").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const statusEl = document.getElementById("cvStatus");
+  statusEl.className = "cv-status";
+  statusEl.textContent = "Reading your CV…";
+
+  try {
+    const text = await extractTextFromFile(file);
+    if (!text || text.trim().length < 20) {
+      throw new Error("Couldn't find readable text in that file — try a different export of your CV.");
+    }
+    state.cvText = text;
+    state.cvKeywords = buildCvWeights(text);
+    state.cvFilename = file.name;
+    statusEl.textContent = `✓ Loaded "${file.name}" — ${state.cvKeywords.size} unique keywords found`;
+    document.getElementById("cvActiveRow").style.display = "block";
+    state.visibleCount = 50;
+    render();
+  } catch (err) {
+    statusEl.className = "cv-status error";
+    statusEl.textContent = `⚠ ${err.message}`;
+  }
+});
+
+document.getElementById("clearCvBtn").addEventListener("click", () => {
+  state.cvKeywords = null;
+  state.cvText = "";
+  state.cvFilename = "";
+  document.getElementById("cvFile").value = "";
+  document.getElementById("cvStatus").textContent = "";
+  document.getElementById("cvActiveRow").style.display = "none";
+  render();
+});
+
+document.getElementById("cvMatchToggle").addEventListener("change", () => {
   state.visibleCount = 50;
   render();
-};
+});
+
+document.getElementById("copyCvMatchesBtn").addEventListener("click", copyCvMatchesForAI);
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
