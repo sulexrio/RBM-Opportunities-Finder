@@ -77,7 +77,23 @@ Every job now gets a `sponsorshipStatus`:
 
 This is keyword-based, not perfect — always confirm on the actual listing before applying.
 
-## What changed in this update
+## CV matching (new)
+
+Upload your CV (PDF, Word, or plain text) directly in the app. Everything happens on your phone — nothing is uploaded to any server:
+- Text is extracted client-side (pdf.js for PDF, mammoth.js for Word)
+- Keywords/skills are auto-extracted (frequency-based, common words filtered out) and shown as editable chips — remove ones that aren't relevant, add ones that were missed
+- Toggle "Sort by fit to my CV" to re-rank every job by keyword overlap with your CV (title matches count more than description matches)
+- The "Copy for AI review" button now includes your CV keywords automatically, so pasting into Claude/ChatGPT gives you a genuine fit assessment, not just a scam check
+
+**Honest limit:** this is fast keyword/skill overlap, not deep semantic understanding — it's a free, instant way to narrow thousands of postings down to your best-fitting handful. For genuine judgment on whether a specific role truly fits your experience, use the AI-review button on your top matches.
+
+Your CV data (filename + extracted keywords, not the original file) is stored only in your browser's local storage — clearing your phone's Safari website data (as in the troubleshooting steps above) will also clear it, so you'd re-upload once.
+
+## Recency filter (new)
+
+"Only show postings from the last 14 days" — filters using each posting's captured date. Sources that don't reliably report a date (some Job Bank Canada listings) are excluded from this view since their age can't be confirmed; turn the filter off to see everything again.
+
+## Changelog
 - EURES coverage widened from 15 to all ~31 EU/EEA countries
 - Added global remote-first sources (Remotive, RemoteOK, Arbeitnow) — the actual fix for location-locked/citizens-only results
 - Added Middle East, Asia, and African country portals to the curated list

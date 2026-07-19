@@ -73,6 +73,117 @@ header p {
   border-bottom: 1px solid #1E293B;
 }
 
+.cv-panel {
+  margin: 16px 20px;
+  padding: 18px;
+  background: #131C2E;
+  border: 1px solid #263349;
+  border-radius: 12px;
+}
+
+.cv-panel-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 2px;
+}
+
+.cv-panel-header p {
+  margin: 0 0 14px;
+  font-size: 0.8rem;
+  color: #8A93A6;
+}
+
+.cv-upload-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed #C9A227;
+  background: rgba(201,162,39,0.08);
+  color: #C9A227;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cv-filename {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #E7E9EE;
+  margin-bottom: 10px;
+}
+
+.cv-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.kw-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(45, 212, 191, 0.1);
+  color: #2DD4BF;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.kw-remove {
+  background: none;
+  border: none;
+  color: #2DD4BF;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.cv-keyword-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cv-keyword-input-row input {
+  flex: 1;
+  background: #0B1120;
+  border: 1px solid #263349;
+  color: #E7E9EE;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-size: 0.85rem;
+}
+
+.cv-keyword-input-row button {
+  padding: 8px 14px;
+  border-radius: 7px;
+  border: 1px solid #263349;
+  background: transparent;
+  color: #E7E9EE;
+  cursor: pointer;
+}
+
+.cv-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cv-clear-btn {
+  background: none;
+  border: none;
+  color: #E85D4E;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 #jobs {
   padding: 16px 20px 80px;
   display: flex;

@@ -1,5 +1,5 @@
 const CACHE_NAME = "opportunity-finder-v2";
-const CORE_ASSETS = ["/", "/index.html", "/app.js", "/styles.css", "/data/jobs.json"];
+const CORE_ASSETS = ["/", "/index.html", "/app.js", "/cv-match.js", "/styles.css", "/data/jobs.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

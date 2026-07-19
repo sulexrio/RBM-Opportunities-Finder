@@ -5,6 +5,7 @@ const state = {
   country: "ALL",
   hideCitizensOnly: true,
   visibleCount: 50,
+  recentOnly: false,
 };
 
 function showSkeleton() {
@@ -34,6 +35,14 @@ function populateCountryFilter() {
     countries.map((c) => `<option value="${c}">${c}</option>`).join("");
 }
 
+function isWithinDays(dateStr, days) {
+  if (!dateStr) return false;
+  const posted = new Date(dateStr);
+  if (isNaN(posted)) return false;
+  const diffMs = Date.now() - posted.getTime();
+  return diffMs >= 0 && diffMs <= days * 24 * 60 * 60 * 1000;
+}
+
 function matchesFilters(job) {
   const q = state.search.toLowerCase();
   const matchesSearch =
@@ -44,15 +53,21 @@ function matchesFilters(job) {
   const matchesCountry = state.country === "ALL" || job.country === state.country;
   const matchesCitizenFilter =
     !state.hideCitizensOnly || job.sponsorshipStatus !== "citizens-only";
-  return matchesSearch && matchesCountry && matchesCitizenFilter;
+  const matchesRecency = !state.recentOnly || isWithinDays(job.postedDate, 14);
+  return matchesSearch && matchesCountry && matchesCitizenFilter && matchesRecency;
 }
 
 function copyForAI(job) {
+  const cv = typeof loadCv === "function" ? loadCv() : null;
+  const cvSection = cv
+    ? `\n\nMy background (keywords from my CV): ${cv.keywords.join(", ")}\nPlease also assess honestly how well this specific role fits my background, and what's missing or a stretch.`
+    : "";
+
   const prompt = `Here's a job posting I found. Please:
 1. Translate it fully to English if it isn't already.
 2. Tell me honestly whether this looks like a legitimate opportunity or has scam warning signs.
 3. Summarize what's required and how to apply.
-4. Draft a short outreach message I could send.
+4. Draft a short outreach message I could send.${cvSection}
 
 Title: ${job.title}
 Employer: ${job.employer}
@@ -72,6 +87,9 @@ function jobCard(job) {
 
   const badges = [];
   badges.push(`<span class="badge country">${job.country}</span>`);
+  if (typeof job.cvScore === "number" && job.cvScore > 0) {
+    badges.push(`<span class="badge verified">🎯 CV fit score: ${job.cvScore}</span>`);
+  }
   if (job.sponsorshipStatus === "citizens-only") {
     badges.push(`<span class="badge risk">🚫 citizens/right-to-work only</span>`);
   } else if (job.sponsorshipStatus === "high-confidence") {
@@ -130,9 +148,22 @@ const SECTION_LABELS = {
 function render() {
   const container = document.getElementById("jobs");
   container.innerHTML = "";
-  const filtered = state.allJobs
-    .filter(matchesFilters)
-    .sort((a, b) => (STATUS_RANK[a.sponsorshipStatus] ?? 2) - (STATUS_RANK[b.sponsorshipStatus] ?? 2));
+  const cv = typeof loadCv === "function" ? loadCv() : null;
+  const matchToggle = document.getElementById("cvMatchToggle");
+  const useCvSort = cv && matchToggle && matchToggle.checked;
+
+  let filtered = state.allJobs.filter(matchesFilters);
+
+  if (useCvSort) {
+    filtered = filtered
+      .map((job) => ({ job, score: scoreJobAgainstKeywords(job, cv.keywords) }))
+      .sort((a, b) => b.score - a.score)
+      .map(({ job, score }) => ({ ...job, cvScore: score }));
+  } else {
+    filtered = filtered.sort(
+      (a, b) => (STATUS_RANK[a.sponsorshipStatus] ?? 2) - (STATUS_RANK[b.sponsorshipStatus] ?? 2)
+    );
+  }
 
   if (filtered.length === 0) {
     container.innerHTML = `<div class="empty-state">No postings match yet. Try a broader search, or check the curated portals below.</div>`;
@@ -141,19 +172,27 @@ function render() {
 
   const visible = filtered.slice(0, state.visibleCount);
 
-  let currentStatus = null;
-  visible.forEach((job) => {
-    const status = job.sponsorshipStatus || "unclear";
-    if (status !== currentStatus) {
-      currentStatus = status;
-      const countInSection = filtered.filter((j) => (j.sponsorshipStatus || "unclear") === status).length;
-      const header = document.createElement("div");
-      header.className = "section-header";
-      header.innerHTML = `${SECTION_LABELS[status] || "Other"} <span class="count">(${countInSection})</span>`;
-      container.appendChild(header);
-    }
-    container.appendChild(jobCard(job));
-  });
+  if (useCvSort) {
+    const header = document.createElement("div");
+    header.className = "section-header";
+    header.innerHTML = `🎯 Sorted by fit to your CV <span class="count">(${filtered.length} matches)</span>`;
+    container.appendChild(header);
+    visible.forEach((job) => container.appendChild(jobCard(job)));
+  } else {
+    let currentStatus = null;
+    visible.forEach((job) => {
+      const status = job.sponsorshipStatus || "unclear";
+      if (status !== currentStatus) {
+        currentStatus = status;
+        const countInSection = filtered.filter((j) => (j.sponsorshipStatus || "unclear") === status).length;
+        const header = document.createElement("div");
+        header.className = "section-header";
+        header.innerHTML = `${SECTION_LABELS[status] || "Other"} <span class="count">(${countInSection})</span>`;
+        container.appendChild(header);
+      }
+      container.appendChild(jobCard(job));
+    });
+  }
 
   const countLabel = document.createElement("div");
   countLabel.className = "empty-state";
@@ -202,6 +241,17 @@ document.getElementById("hideCitizensOnly").addEventListener("change", (e) => {
   state.visibleCount = 50;
   render();
 });
+
+document.getElementById("recentOnly").addEventListener("change", (e) => {
+  state.recentOnly = e.target.checked;
+  state.visibleCount = 50;
+  render();
+});
+
+window.onCvChanged = () => {
+  state.visibleCount = 50;
+  render();
+};
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");

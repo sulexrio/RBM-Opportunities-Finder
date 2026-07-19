@@ -31,6 +31,39 @@
     <div class="status-bar" id="status">Loading…</div>
   </div>
 
+  <div class="cv-panel" id="cvPanel">
+    <div class="cv-panel-header">
+      <h2>Match jobs to your CV</h2>
+      <p>Upload once — parsed and kept only on this device, never uploaded anywhere.</p>
+    </div>
+    <div id="cvUploadArea">
+      <input type="file" id="cvFile" accept=".pdf,.docx,.txt" style="display:none;" />
+      <button id="cvUploadBtn" class="cv-upload-btn">Upload CV (PDF, Word, or text)</button>
+    </div>
+    <div id="cvActiveArea" style="display:none;">
+      <div class="cv-filename" id="cvFilename"></div>
+      <div class="cv-keywords" id="cvKeywords"></div>
+      <div class="cv-keyword-input-row">
+        <input type="text" id="cvAddKeyword" placeholder="Add a missing keyword…" />
+        <button id="cvAddKeywordBtn">Add</button>
+      </div>
+      <div class="cv-actions">
+        <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:#8A93A6;">
+          <input type="checkbox" id="cvMatchToggle" />
+          Sort by fit to my CV
+        </label>
+        <button id="cvClearBtn" class="cv-clear-btn">Remove CV</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls" style="padding-top:0;">
+    <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:#8A93A6;">
+      <input type="checkbox" id="recentOnly" />
+      Only show postings from the last 14 days
+    </label>
+  </div>
+
   <div id="jobs"></div>
 
   <div class="manual-sources">
@@ -40,6 +73,9 @@
 
   <button id="backToTop" aria-label="Back to top">↑</button>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="cv-match.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
