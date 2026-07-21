@@ -2,7 +2,7 @@ name: Fetch and merge opportunities
 
 on:
   schedule:
-    - cron: "0 * * * *"   # every hour — free, public repos have unlimited Actions minutes
+    - cron: "0 */3 * * *"   # every 3 hours - wider spacing is honored more reliably by GitHub's free scheduler
   workflow_dispatch: {}    # lets you trigger a manual run from GitHub UI
 
 permissions:
