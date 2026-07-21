@@ -77,9 +77,10 @@ function main() {
   const canada = loadJson("data/raw/canada.json");
   const globalRemote = loadJson("data/raw/global-remote.json");
   const aggregators = loadJson("data/raw/aggregators.json");
+  const companyBoards = loadJson("data/raw/company-boards.json");
   const ukSponsors = loadJson("data/raw/uk-sponsors.json", {});
 
-  let allJobs = [...eures, ...canada, ...globalRemote, ...aggregators];
+  let allJobs = [...eures, ...canada, ...globalRemote, ...aggregators, ...companyBoards];
 
   allJobs = allJobs.map((job) => ({
     ...job,
@@ -99,12 +100,14 @@ function main() {
   });
 
   const manualSources = loadJson("data/manual-sources.json", { sources: [] });
+  const startupSources = loadJson("data/startup-sources.json", { sources: [] });
 
   const output = {
     generatedAt: new Date().toISOString(),
     totalJobs: allJobs.length,
     jobs: allJobs,
     manualSources: manualSources.sources || [],
+    startupSources: startupSources.sources || [],
   };
 
   fs.writeFileSync("data/jobs.json", JSON.stringify(output, null, 2));

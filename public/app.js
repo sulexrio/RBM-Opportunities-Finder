@@ -1,15 +1,47 @@
 const state = {
   allJobs: [],
   manualSources: [],
+  startupSources: [],
   search: "",
   country: "ALL",
   hideCitizensOnly: true,
   recentOnly: false,
+  myListOnly: false,
   visibleCount: 50,
   cvKeywords: null, // Map<word, weight> once a CV is loaded, else null
   cvText: "",
   cvFilename: "",
+  savedJobs: {}, // { [jobId]: 'saved' | 'applied' }, persisted to localStorage
 };
+
+const SAVED_JOBS_KEY = "opportunity-finder-saved-jobs";
+
+function loadSavedJobs() {
+  try {
+    const raw = localStorage.getItem(SAVED_JOBS_KEY);
+    state.savedJobs = raw ? JSON.parse(raw) : {};
+  } catch {
+    state.savedJobs = {};
+  }
+}
+
+function persistSavedJobs() {
+  try {
+    localStorage.setItem(SAVED_JOBS_KEY, JSON.stringify(state.savedJobs));
+  } catch (err) {
+    console.warn("Could not save to localStorage:", err.message);
+  }
+}
+
+function setJobStatus(jobId, status) {
+  if (status === null) {
+    delete state.savedJobs[jobId];
+  } else {
+    state.savedJobs[jobId] = status;
+  }
+  persistSavedJobs();
+  render();
+}
 
 function showSkeleton() {
   const container = document.getElementById("jobs");
@@ -24,6 +56,7 @@ async function loadData() {
   const data = await res.json();
   state.allJobs = data.jobs || [];
   state.manualSources = data.manualSources || [];
+  state.startupSources = data.startupSources || [];
   document.getElementById("status").textContent =
     `${data.totalJobs} postings · last updated ${new Date(data.generatedAt).toLocaleString()}`;
   populateCountryFilter();
@@ -161,7 +194,8 @@ function matchesFilters(job) {
   const matchesCitizenFilter =
     !state.hideCitizensOnly || job.sponsorshipStatus !== "citizens-only";
   const matchesRecency = !state.recentOnly || isWithinDays(job.postedDate, 14);
-  return matchesSearch && matchesCountry && matchesCitizenFilter && matchesRecency;
+  const matchesMyList = !state.myListOnly || Boolean(state.savedJobs[job.id]);
+  return matchesSearch && matchesCountry && matchesCitizenFilter && matchesRecency && matchesMyList;
 }
 
 function copyForAI(job) {
@@ -210,6 +244,12 @@ function jobCard(job) {
   if (job.needsTranslation) {
     badges.push(`<span class="badge country">needs translation</span>`);
   }
+  const myStatus = state.savedJobs[job.id];
+  if (myStatus === "saved") {
+    badges.push(`<span class="badge match-score">☆ saved</span>`);
+  } else if (myStatus === "applied") {
+    badges.push(`<span class="badge verified">✓ applied</span>`);
+  }
 
   card.innerHTML = `
     <div class="job-top">
@@ -226,10 +266,18 @@ function jobCard(job) {
     <div class="job-actions">
       <a class="primary" href="${job.url}" target="_blank" rel="noopener">Open listing</a>
       <button data-action="copy-ai">Copy for AI review</button>
+      <button data-action="save">${myStatus === "saved" ? "Unsave" : "☆ Save"}</button>
+      <button data-action="applied">${myStatus === "applied" ? "Unmark applied" : "✓ Mark applied"}</button>
     </div>
   `;
 
   card.querySelector('[data-action="copy-ai"]').addEventListener("click", () => copyForAI(job));
+  card.querySelector('[data-action="save"]').addEventListener("click", () =>
+    setJobStatus(job.id, myStatus === "saved" ? null : "saved")
+  );
+  card.querySelector('[data-action="applied"]').addEventListener("click", () =>
+    setJobStatus(job.id, myStatus === "applied" ? null : "applied")
+  );
   return card;
 }
 
@@ -325,6 +373,21 @@ function renderManualSources() {
     .join("");
 }
 
+function renderStartupSources() {
+  const list = document.getElementById("startupSourcesList");
+  const categoryLabels = {
+    "startup-jobs": "Startup jobs",
+    "cofounder-matching": "Co-founder matching",
+    community: "Community",
+  };
+  list.innerHTML = state.startupSources
+    .map(
+      (s) =>
+        `<li><strong>${categoryLabels[s.category] || s.category}</strong> — ${s.name}: <a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></li>`
+    )
+    .join("");
+}
+
 document.getElementById("search").addEventListener("input", (e) => {
   state.search = e.target.value;
   state.visibleCount = 50;
@@ -345,6 +408,12 @@ document.getElementById("hideCitizensOnly").addEventListener("change", (e) => {
 
 document.getElementById("recentOnly").addEventListener("change", (e) => {
   state.recentOnly = e.target.checked;
+  state.visibleCount = 50;
+  render();
+});
+
+document.getElementById("myListOnly").addEventListener("change", (e) => {
+  state.myListOnly = e.target.checked;
   state.visibleCount = 50;
   render();
 });
@@ -403,4 +472,8 @@ backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-loadData().then(renderManualSources);
+loadSavedJobs();
+loadData().then(() => {
+  renderManualSources();
+  renderStartupSources();
+});

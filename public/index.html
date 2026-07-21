@@ -53,10 +53,22 @@
       </div>
     </div>
 
+    <div class="controls" style="padding-top:0;">
+      <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:#8A93A6;">
+        <input type="checkbox" id="myListOnly" />
+        Show only my saved/applied jobs
+      </label>
+    </div>
+
     <div class="status-bar" id="status">Loading…</div>
   </div>
 
   <div id="jobs"></div>
+
+  <div class="manual-sources">
+    <h2>Startup jobs &amp; co-founder matching (no open API — check directly)</h2>
+    <ul id="startupSourcesList"></ul>
+  </div>
 
   <div class="manual-sources">
     <h2>Curated portals (no open API — check directly)</h2>

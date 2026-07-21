@@ -38,6 +38,9 @@ jobs:
           ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
         run: node scripts/fetch-aggregators.js
 
+      - name: Fetch company ATS boards (Greenhouse, Lever, Ashby)
+        run: node scripts/fetch-company-boards.js
+
       - name: Merge, verify, classify sponsorship, flag scam risk
         run: node scripts/merge.js
 

@@ -1,0 +1,11 @@
+{
+  "note": "Startup jobs and co-founder matching platforms — none of these have open/free search APIs (co-founder matching especially is always account-gated), so these are direct links to check yourself.",
+  "sources": [
+    { "category": "startup-jobs", "name": "Y Combinator Work at a Startup", "url": "https://www.workatastartup.com", "type": "board" },
+    { "category": "startup-jobs", "name": "Wellfound (formerly AngelList Talent)", "url": "https://wellfound.com", "type": "board" },
+    { "category": "startup-jobs", "name": "Remote OK Startup Jobs", "url": "https://remoteok.com/remote-startup-jobs", "type": "board" },
+    { "category": "cofounder-matching", "name": "Y Combinator Co-Founder Matching", "url": "https://www.startupschool.org/cofounder-matching", "type": "matching" },
+    { "category": "cofounder-matching", "name": "CoFoundersLab", "url": "https://www.cofounderslab.com", "type": "matching" },
+    { "category": "cofounder-matching", "name": "Indie Hackers (community, co-founder posts)", "url": "https://www.indiehackers.com", "type": "community" }
+  ]
+}

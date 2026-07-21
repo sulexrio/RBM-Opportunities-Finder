@@ -1,0 +1,19 @@
+{
+  "note": "Best-effort starter list — company ATS slugs occasionally change or get renamed, and the fetcher skips any that fail without breaking the pipeline. Add more over time: find a company's careers page, check if it's hosted on boards.greenhouse.io/<slug>, jobs.lever.co/<slug>, or jobs.ashbyhq.com/<slug>, and add the slug + platform below.",
+  "companies": [
+    { "slug": "gitlab", "platform": "greenhouse" },
+    { "slug": "zapier", "platform": "greenhouse" },
+    { "slug": "close", "platform": "greenhouse" },
+    { "slug": "articulate", "platform": "greenhouse" },
+    { "slug": "toggl", "platform": "greenhouse" },
+    { "slug": "remote", "platform": "greenhouse" },
+    { "slug": "doist", "platform": "greenhouse" },
+    { "slug": "netlify", "platform": "greenhouse" },
+    { "slug": "postscript", "platform": "lever" },
+    { "slug": "attentive", "platform": "lever" },
+    { "slug": "linear", "platform": "ashby" },
+    { "slug": "vercel", "platform": "ashby" },
+    { "slug": "replit", "platform": "ashby" },
+    { "slug": "notion", "platform": "ashby" }
+  ]
+}
