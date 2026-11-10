@@ -23421,6 +23421,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "adamo technologies ltd": {
+    "Organisation Name": "ADAMO TECHNOLOGIES LTD",
+    "Town/City": "LONDON",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "adams & co uk ltd": {
     "Organisation Name": "ADAMS & CO UK LTD",
     "Town/City": "England",
@@ -30687,6 +30694,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "agri bale ltd": {
+    "Organisation Name": "Agri Bale Ltd",
+    "Town/City": "Peterborough",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "agri castle ltd": {
     "Organisation Name": "Agri Castle Ltd",
     "Town/City": "London",
@@ -33461,8 +33475,8 @@
   },
   "airport coordination limited": {
     "Organisation Name": "Airport Coordination Limited",
-    "Town/City": "Staines-upon-Thames",
-    "County": "",
+    "Town/City": "Egham",
+    "County": "Surrey",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -36800,7 +36814,7 @@
   },
   "al phoenix ltd": {
     "Organisation Name": "AL PHOENIX LTD",
-    "Town/City": "Hertfordshire",
+    "Town/City": "Borehamwood",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -40200,13 +40214,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "alfa energy limited": {
-    "Organisation Name": "Alfa Energy Limited",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "alfa financial software ltd": {
     "Organisation Name": "Alfa Financial Software Ltd",
     "Town/City": "London",
@@ -40721,6 +40728,13 @@
   "ali & sons (southside) limited": {
     "Organisation Name": "ALI & SONS (SOUTHSIDE) LIMITED",
     "Town/City": "Glasgow",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "ali & sons holding limited": {
+    "Organisation Name": "ALI & SONS HOLDING LIMITED",
+    "Town/City": "Elgin",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -52786,6 +52800,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "andersen tax limited": {
+    "Organisation Name": "Andersen Tax Limited",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Global Business Mobility: Senior or Specialist Worker"
+  },
   "andersenlab ltd": {
     "Organisation Name": "ANDERSENLAB LTD",
     "Town/City": "London",
@@ -53293,6 +53314,13 @@
   "andritz limited": {
     "Organisation Name": "ANDRITZ Limited",
     "Town/City": "Newcastle Under Lyme",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "androlabs uk ltd": {
+    "Organisation Name": "Androlabs UK Ltd",
+    "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -56045,6 +56073,13 @@
     "Organisation Name": "Ansh Soni Limited",
     "Town/City": "Rustington",
     "County": "West Sussex",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "ansh uk": {
+    "Organisation Name": "Ansh UK",
+    "Town/City": "London",
+    "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -67168,13 +67203,6 @@
     "Organisation Name": "Artform Architects",
     "Town/City": "Manchester",
     "County": "Greater Manchester",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "artgeorge care services": {
-    "Organisation Name": "ArtGeorge Care Services",
-    "Town/City": "Portsmouth",
-    "County": "Hampshire",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -87814,6 +87842,13 @@
     "Type & Rating": "Temporary Worker (A rating)",
     "Route": "Charity Worker"
   },
+  "baclor ltd t/a stirlight": {
+    "Organisation Name": "Baclor Ltd t/a StirLight",
+    "Town/City": "Holmewood",
+    "County": "Chesterfield",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "bacon lane surgery": {
     "Organisation Name": "Bacon Lane Surgery",
     "Town/City": "Edgware",
@@ -104308,7 +104343,7 @@
   },
   "best wines london ltd": {
     "Organisation Name": "Best Wines London Ltd",
-    "Town/City": "London",
+    "Town/City": "Walton-On-Thames",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -110431,6 +110466,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "birmingham presbyterian church": {
+    "Organisation Name": "BIRMINGHAM PRESBYTERIAN CHURCH",
+    "Town/City": "Bournville",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Tier 2 Ministers of Religion"
+  },
   "birmingham raw pet food limited": {
     "Organisation Name": "BIRMINGHAM RAW PET FOOD LIMITED",
     "Town/City": "Birmingham",
@@ -116195,7 +116237,7 @@
   "blue water energy llp": {
     "Organisation Name": "BLUE WATER ENERGY LLP",
     "Town/City": "London",
-    "County": "EMEA",
+    "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -121871,6 +121913,13 @@
   },
   "boulder creek international plc": {
     "Organisation Name": "Boulder Creek International plc",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "boulebar uk ltd": {
+    "Organisation Name": "Boulebar UK LTD",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -131940,7 +131989,7 @@
     "Town/City": "Coventry",
     "County": "",
     "Type & Rating": "Worker (A rating)",
-    "Route": "Global Business Mobility: Senior or Specialist Worker"
+    "Route": "Skilled Worker"
   },
   "brose solicitors ltd": {
     "Organisation Name": "Brose Solicitors Ltd",
@@ -135701,13 +135750,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "buonkey general trading uk ltd (15422771)": {
-    "Organisation Name": "BUONKEY GENERAL TRADING UK LTD (15422771)",
-    "Town/City": "ENGLAND",
-    "County": "",
-    "Type & Rating": "Worker (UK Expansion Worker: Provisional )",
-    "Route": "Global Business Mobility: UK Expansion Worker"
-  },
   "buoyancy aerospace limited": {
     "Organisation Name": "Buoyancy Aerospace Limited",
     "Town/City": "London",
@@ -137230,13 +137272,6 @@
   "business mail solutions limited": {
     "Organisation Name": "BUSINESS MAIL SOLUTIONS LIMITED",
     "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "business management london limited": {
-    "Organisation Name": "BUSINESS MANAGEMENT LONDON LIMITED",
-    "Town/City": "COVENTRY",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -142589,6 +142624,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "calm futures norfolk ltd": {
+    "Organisation Name": "Calm Futures Norfolk Ltd",
+    "Town/City": "Norwich",
+    "County": "Norfolk",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "calm.com (gb) limited": {
     "Organisation Name": "Calm.com (GB) Limited",
     "Town/City": "London",
@@ -144423,19 +144465,12 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "camphill devon community ltd": {
-    "Organisation Name": "Camphill Devon Community Ltd",
-    "Town/City": "Buckfastleigh",
-    "County": "Devon",
-    "Type & Rating": "Temporary Worker (A rating)",
-    "Route": "Charity Worker"
-  },
   "camphill milton keynes communities": {
     "Organisation Name": "Camphill Milton Keynes Communities",
     "Town/City": "Milton Keynes",
     "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
+    "Type & Rating": "Temporary Worker (A rating)",
+    "Route": "Charity Worker"
   },
   "camphill rudolf steiner schools limited": {
     "Organisation Name": "Camphill Rudolf Steiner Schools Limited",
@@ -152384,6 +152419,13 @@
   },
   "case45 ltd": {
     "Organisation Name": "CASE45 LTD",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "casecraft.ai ltd": {
+    "Organisation Name": "CASECRAFT.AI LTD",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -162998,6 +163040,13 @@
     "Organisation Name": "Chef De Mumbai LLP T/A Chef de Mumbai",
     "Town/City": "Dover",
     "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "chef express herts ltd": {
+    "Organisation Name": "CHEF EXPRESS HERTS LTD",
+    "Town/City": "St Albans",
+    "County": "Hertfordshire",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -181131,6 +181180,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "collens healthcare ltd": {
+    "Organisation Name": "Collens Healthcare Ltd",
+    "Town/City": "Gloucester",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "coller capital ltd": {
     "Organisation Name": "Coller Capital Ltd",
     "Town/City": "London",
@@ -194200,6 +194256,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "craigavon tv service centre limited": {
+    "Organisation Name": "Craigavon TV Service Centre Limited",
+    "Town/City": "Bristol",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "craigdale care limited t/a  the old vicarage residential home": {
     "Organisation Name": "Craigdale Care Limited T/A  The Old Vicarage Residential Home",
     "Town/City": "Frampton-on-Severn",
@@ -195449,6 +195512,13 @@
   "creative it consultants ltd": {
     "Organisation Name": "CREATIVE IT CONSULTANTS LTD",
     "Town/City": "Solihull",
+    "County": "West Midlands",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "creative joinery limited": {
+    "Organisation Name": "CREATIVE JOINERY LIMITED",
+    "Town/City": "Smethwick",
     "County": "West Midlands",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -207453,10 +207523,10 @@
   },
   "daregal gourmet ltd": {
     "Organisation Name": "Daregal Gourmet Ltd",
-    "Town/City": "Long Stratton",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
+    "Town/City": "Ipswich Road",
+    "County": "Long Stratton",
+    "Type & Rating": "",
+    "Route": "Worker (A rating)"
   },
   "darethealthcare uk limited": {
     "Organisation Name": "Darethealthcare UK Limited",
@@ -225497,13 +225567,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "djp varsani ltd": {
-    "Organisation Name": "DJP VARSANI LTD",
-    "Town/City": "Wigan",
-    "County": "Lancashire",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "djr food and beverage ltd": {
     "Organisation Name": "DJR Food and Beverage Ltd",
     "Town/City": "Manchester",
@@ -226472,13 +226535,6 @@
   },
   "dnb bank asa london branch": {
     "Organisation Name": "DNB Bank ASA London Branch",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "dnb carnegie investment bank ab uk branch": {
-    "Organisation Name": "DNB Carnegie Investment Bank AB UK Branch",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -227501,8 +227557,8 @@
   },
   "domainex limited": {
     "Organisation Name": "Domainex Limited",
-    "Town/City": "Saffron Walden",
-    "County": "",
+    "Town/City": "Cambridge",
+    "County": "Cambridgeshire",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -235948,13 +236004,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "duratem supported living ltd": {
-    "Organisation Name": "Duratem Supported Living Ltd",
-    "Town/City": "Dagenham",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "durban curry club": {
     "Organisation Name": "Durban Curry Club",
     "Town/City": "Brighton",
@@ -243725,6 +243774,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "ecoflow innovation uk limited": {
+    "Organisation Name": "ECOFLOW INNOVATION UK LIMITED",
+    "Town/City": "Birmingham",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "ecofusion strategies ltd": {
     "Organisation Name": "ECOFUSION STRATEGIES LTD",
     "Town/City": "London",
@@ -250676,6 +250732,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "elettronica spa": {
+    "Organisation Name": "ELETTRONICA SPA",
+    "Town/City": "Reading",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "elev8 fire engineering ltd": {
     "Organisation Name": "Elev8 Fire Engineering Ltd",
     "Town/City": "Nottingham",
@@ -251548,13 +251611,6 @@
     "Organisation Name": "ELITE DOORS & WINDOWS LTD",
     "Town/City": "SMETHWICK",
     "County": "WEST MIDLANDS",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "elite dynamics london limited": {
-    "Organisation Name": "Elite Dynamics London Limited",
-    "Town/City": "Brentford",
-    "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -262030,6 +262086,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "ernies convenience store ltd": {
+    "Organisation Name": "ERNIES CONVENIENCE STORE LTD",
+    "Town/City": "North Yorkshire",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "ernst & young": {
     "Organisation Name": "Ernst & Young",
     "Town/City": "London",
@@ -272271,6 +272334,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "eykon limited": {
+    "Organisation Name": "EYKON Limited",
+    "Town/City": "Manchester",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "eynsham medical group": {
     "Organisation Name": "Eynsham Medical Group",
     "Town/City": "Witney",
@@ -281868,6 +281938,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "filipino flavours & hospitality group ltd t/a kasa and kin": {
+    "Organisation Name": "Filipino Flavours & Hospitality Group Ltd t/a Kasa and Kin",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "filishack partners ltd": {
     "Organisation Name": "Filishack Partners Ltd",
     "Town/City": "London",
@@ -283084,7 +283161,7 @@
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
-    "Route": "Global Business Mobility: Senior or Specialist Worker"
+    "Route": "Skilled Worker"
   },
   "finmile ai limited": {
     "Organisation Name": "Finmile AI Limited",
@@ -334215,7 +334292,7 @@
     "Route": "Religious Worker"
   },
   "gurger ltd": {
-    "Organisation Name": "GURGER LTD",
+    "Organisation Name": "Gurger Ltd",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -350006,6 +350083,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "heat horizons limited": {
+    "Organisation Name": "Heat Horizons Limited",
+    "Town/City": "Chinnor",
+    "County": "Oxfordshire",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "heat plumb drain ltd": {
     "Organisation Name": "HEAT PLUMB DRAIN LTD",
     "Town/City": "MAIDSTONE",
@@ -363131,6 +363215,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "honestly tasty ltd": {
+    "Organisation Name": "Honestly Tasty Ltd",
+    "Town/City": "Enfield",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "honesty group ltd": {
     "Organisation Name": "Honesty Group Ltd",
     "Town/City": "Newbury",
@@ -365261,7 +365352,7 @@
   },
   "hotel ventures ltd": {
     "Organisation Name": "HOTEL VENTURES LTD",
-    "Town/City": "crawley",
+    "Town/City": "Hainault",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -366750,13 +366841,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "hpx mines (uk) limited": {
-    "Organisation Name": "HPX Mines (UK) Limited",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "hq aviation ltd": {
     "Organisation Name": "HQ Aviation Ltd",
     "Town/City": "denham",
@@ -367587,13 +367671,6 @@
     "Organisation Name": "HT Company (Essex) Ltd",
     "Town/City": "Gants Hill",
     "County": "Essex",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "ht digital ltd": {
-    "Organisation Name": "HT Digital Ltd",
-    "Town/City": "London",
-    "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -374289,6 +374366,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Global Business Mobility: Senior or Specialist Worker"
   },
+  "ics advisory limited": {
+    "Organisation Name": "ICS Advisory Limited",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "ics consulting limited": {
     "Organisation Name": "ICS Consulting Limited",
     "Town/City": "Leeds",
@@ -378706,13 +378790,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "imperial beddings mcr limited": {
-    "Organisation Name": "IMPERIAL BEDDINGS MCR LIMITED",
-    "Town/City": "Manchester",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "imperial bioscience ltd": {
     "Organisation Name": "IMPERIAL BIOSCIENCE LTD",
     "Town/City": "London",
@@ -379332,6 +379409,13 @@
   "impression digital limited": {
     "Organisation Name": "IMPRESSION DIGITAL LIMITED",
     "Town/City": "NOTTINGHAM",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "impression health & support apartments limited": {
+    "Organisation Name": "Impression Health & Support Apartments Limited",
+    "Town/City": "Liverpool",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -387911,6 +387995,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "intelligent media technology ltd": {
+    "Organisation Name": "Intelligent Media Technology Ltd",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "intelligent processing solutions limited": {
     "Organisation Name": "Intelligent Processing Solutions Limited",
     "Town/City": "Northampton",
@@ -389271,6 +389362,13 @@
   },
   "international health partners (uk) limited": {
     "Organisation Name": "International Health Partners (UK) Limited",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "international hospitality media limited": {
+    "Organisation Name": "International Hospitality Media Limited",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -391158,13 +391256,6 @@
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Global Business Mobility: Senior or Specialist Worker"
-  },
-  "investindustrial services limited": {
-    "Organisation Name": "Investindustrial Services Limited",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
   },
   "investis digital limited": {
     "Organisation Name": "Investis Digital Limited",
@@ -396132,6 +396223,13 @@
   "ivan megaw & son ltd": {
     "Organisation Name": "IVAN MEGAW & SON LTD",
     "Town/City": "CRAIGAVON",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "ivanhoe atlantic (uk) limited": {
+    "Organisation Name": "Ivanhoe Atlantic (UK) Limited",
+    "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -423016,6 +423114,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "keele house care home": {
+    "Organisation Name": "Keele House Care Home",
+    "Town/City": "Ramsgate",
+    "County": "Kent",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "keele university - human resources": {
     "Organisation Name": "Keele University - Human Resources",
     "Town/City": "Newcastle-under-Lyme",
@@ -436519,6 +436624,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "kp o2 ltd t/a kitchen pizzeria": {
+    "Organisation Name": "KP O2 LTD t/a Kitchen Pizzeria",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "kp pankhania ltd": {
     "Organisation Name": "KP Pankhania Ltd",
     "Town/City": "Wembley",
@@ -444569,13 +444681,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "landis+gyr metering solutions limited": {
-    "Organisation Name": "Landis+Gyr Metering Solutions Limited",
-    "Town/City": "Manchester",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "landlord certificate london limited": {
     "Organisation Name": "Landlord Certificate London Limited",
     "Town/City": "Romford",
@@ -452572,7 +452677,7 @@
   },
   "leven laboratories limited": {
     "Organisation Name": "Leven Laboratories Limited",
-    "Town/City": "London",
+    "Town/City": "Newcastle Under Lyme",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Global Business Mobility: UK Expansion Worker"
@@ -467547,6 +467652,13 @@
     "Organisation Name": "Lotus Diamond Limited",
     "Town/City": "Chester",
     "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "lotus enterprise limited t/a swindon road express": {
+    "Organisation Name": "Lotus Enterprise Limited T/A Swindon Road Express",
+    "Town/City": "Horsham",
+    "County": "West Sussex",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -504813,7 +504925,7 @@
   },
   "mgm uk enterprises ltd": {
     "Organisation Name": "MGM UK ENTERPRISES LTD",
-    "Town/City": "Ilford",
+    "Town/City": "Walsall",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -517651,7 +517763,7 @@
   },
   "monarch consultants limited": {
     "Organisation Name": "Monarch Consultants Limited",
-    "Town/City": "Birmingham",
+    "Town/City": "Smethwick",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -529259,6 +529371,13 @@
     "Organisation Name": "MULE STUDIO LTD",
     "Town/City": "London",
     "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "mulfab engineering ltd": {
+    "Organisation Name": "MULFAB ENGINEERING LTD",
+    "Town/City": "Dungannon",
+    "County": "Tyrone",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -542051,13 +542170,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "netherclay house": {
-    "Organisation Name": "Netherclay House",
-    "Town/City": "Taunton",
-    "County": "Somerset",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "netherclay house ltd": {
     "Organisation Name": "Netherclay House Ltd",
     "Town/City": "Taunton",
@@ -546779,13 +546891,6 @@
   "newmedica worcester limited": {
     "Organisation Name": "Newmedica Worcester Limited",
     "Town/City": "Worcester",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "newmexican ventures ltd": {
-    "Organisation Name": "Newmexican Ventures Ltd",
-    "Town/City": "Mitcham",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -560111,6 +560216,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "nsv group ltd": {
+    "Organisation Name": "NSV GROUP LTD",
+    "Town/City": "Sunbury on Thames",
+    "County": "Middlesex",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "nsx ltd.": {
     "Organisation Name": "NSX Ltd.",
     "Town/City": "Stowmarket",
@@ -568385,13 +568497,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "om sai international ltd": {
-    "Organisation Name": "OM SAI International Ltd",
-    "Town/City": "Amersham",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "om sai krupa ltd": {
     "Organisation Name": "OM SAI KRUPA LTD",
     "Town/City": "BRISTOL",
@@ -568916,6 +569021,13 @@
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
+  },
+  "omg (hamilton) ltd": {
+    "Organisation Name": "OMG (HAMILTON) LTD",
+    "Town/City": "Glasgow",
+    "County": "South Lanarkshire",
+    "Type & Rating": "",
+    "Route": "Worker (A rating)"
   },
   "omg consulting ltd": {
     "Organisation Name": "OMG CONSULTING LTD",
@@ -574682,13 +574794,6 @@
     "Organisation Name": "Orcan Intelligence Ltd",
     "Town/City": "London",
     "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "orchard care (south west) ltd": {
-    "Organisation Name": "Orchard Care (South West) Ltd",
-    "Town/City": "Weston-Super-Mare",
-    "County": "North Somerset",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -586419,10 +586524,10 @@
   },
   "park n fly birmingham ltd": {
     "Organisation Name": "PARK N FLY BIRMINGHAM LTD",
-    "Town/City": "Birmingham",
+    "Town/City": "Oldham",
     "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
+    "Type & Rating": "",
+    "Route": "Worker (A rating)"
   },
   "park news": {
     "Organisation Name": "Park News",
@@ -586981,13 +587086,6 @@
     "Organisation Name": "PARKSIDE LODGE HEALTH CARE LTD",
     "Town/City": "Chichester",
     "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "parkside lodge health care ltd t/a parkside lodge residential home": {
-    "Organisation Name": "PARKSIDE LODGE HEALTH CARE LTD T/A PARKSIDE LODGE RESIDENTIAL HOME",
-    "Town/City": "WORTHING",
-    "County": "WEST SUSSEX",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -588895,13 +588993,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "patience care solutions ltd": {
-    "Organisation Name": "Patience Care Solutions Ltd",
-    "Town/City": "Penistone",
-    "County": "South Yorkshire",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "patience company limited": {
     "Organisation Name": "Patience Company Limited",
     "Town/City": "Bristol",
@@ -589998,6 +590089,13 @@
     "Organisation Name": "Payman Club Ltd",
     "Town/City": "Royston",
     "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "paymaster (1836) limited": {
+    "Organisation Name": "Paymaster (1836) Limited",
+    "Town/City": "Crawley",
+    "County": "West Sussex",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -620514,6 +620612,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "prop up project cic": {
+    "Organisation Name": "Prop Up Project CIC",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "prop80 limited": {
     "Organisation Name": "PROP80 LIMITED",
     "Town/City": "London",
@@ -627131,13 +627236,6 @@
   },
   "qima (uk) limited": {
     "Organisation Name": "QIMA (UK) LIMITED",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "qima coffee limited": {
-    "Organisation Name": "Qima Coffee Limited",
     "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -644737,13 +644835,6 @@
   "redhill traders limited": {
     "Organisation Name": "Redhill Traders Limited",
     "Town/City": "Redhill",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "redholme memory care ltd": {
-    "Organisation Name": "Redholme Memory Care ltd",
-    "Town/City": "Liverpool",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -663480,13 +663571,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "rotary residential and care centers": {
-    "Organisation Name": "Rotary Residential and Care Centers",
-    "Town/City": "GLASGOW",
-    "County": "County (optional)",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "rotary watches limited": {
     "Organisation Name": "Rotary Watches Limited",
     "Town/City": "Rayleigh",
@@ -670025,13 +670109,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "s and j drinks limited": {
-    "Organisation Name": "S And J Drinks Limited",
-    "Town/City": "West Ealing",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "s and k pvt ltd": {
     "Organisation Name": "S AND K PVT LTD",
     "Town/City": "LOUGHTON",
@@ -673576,8 +673653,8 @@
   },
   "safancy": {
     "Organisation Name": "SAFANCY",
-    "Town/City": "BLACKBURN",
-    "County": "",
+    "Town/City": "Brierley Hill",
+    "County": "West Midlands",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -675594,7 +675671,7 @@
     "Organisation Name": "SAI HARA LIMITED",
     "Town/City": "uxbridge",
     "County": "",
-    "Type & Rating": "Worker (B rating)",
+    "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
   "sai hospitality limited t/a chin chin": {
@@ -676156,13 +676233,6 @@
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Tier 2 Ministers of Religion"
-  },
-  "saint john of god hospitaller services": {
-    "Organisation Name": "Saint John of God Hospitaller Services",
-    "Town/City": "Darlington",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
   },
   "saint john southworth catholic academy trust": {
     "Organisation Name": "Saint John Southworth Catholic Academy Trust",
@@ -691522,6 +691592,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "sella c studio limited": {
+    "Organisation Name": "SELLA C STUDIO LIMITED",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "sella controls limited": {
     "Organisation Name": "Sella Controls Limited",
     "Town/City": "Ashby De La Zouch",
@@ -697556,13 +697633,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "shankar leicester limited": {
-    "Organisation Name": "SHANKAR LEICESTER LIMITED",
-    "Town/City": "Loughborough",
-    "County": "Leicestershire",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "shankar tech ltd": {
     "Organisation Name": "Shankar Tech Ltd",
     "Town/City": "Aberdeen",
@@ -700808,6 +700878,13 @@
     "Organisation Name": "Shiloh Restaurant LTD",
     "Town/City": "LUTON",
     "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "shiloz services limited": {
+    "Organisation Name": "Shiloz Services Limited",
+    "Town/City": "Romford",
+    "County": "Essex",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -705872,6 +705949,13 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "sigmatic limited": {
+    "Organisation Name": "Sigmatic Limited",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "sigmus limited": {
     "Organisation Name": "SIGMUS LIMITED",
     "Town/City": "London",
@@ -709047,7 +709131,7 @@
     "Organisation Name": "SINDHERFOODS LIMITED",
     "Town/City": "Hengoed",
     "County": "",
-    "Type & Rating": "Worker (A rating)",
+    "Type & Rating": "Worker (B rating)",
     "Route": "Skilled Worker"
   },
   "sindhu immigration services": {
@@ -717082,6 +717166,13 @@
   "smbc nikko capital markets limited": {
     "Organisation Name": "SMBC Nikko Capital Markets Limited",
     "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "smbs healthcare ltd": {
+    "Organisation Name": "SMBS HEALTHCARE LTD",
+    "Town/City": "WOODSETTON",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -732067,8 +732158,8 @@
     "Route": "Skilled Worker"
   },
   "springfield care centre": {
-    "Organisation Name": "SPRINGFIELD CARE CENTRE",
-    "Town/City": "London",
+    "Organisation Name": "Springfield Care Centre",
+    "Town/City": "Ilford",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -759178,9 +759269,9 @@
     "Route": "Skilled Worker"
   },
   "switch on ltd": {
-    "Organisation Name": "SWITCH ON LTD",
-    "Town/City": "BIRMINGHAM",
-    "County": "",
+    "Organisation Name": "Switch On Ltd",
+    "Town/City": "Dudley",
+    "County": "West Midlands",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -782102,13 +782193,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "the compleat food group (holdings) limited": {
-    "Organisation Name": "The Compleat Food Group (Holdings) Limited",
-    "Town/City": "Nottingham",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "the complete works alternative education": {
     "Organisation Name": "The Complete Works Alternative Education",
     "Town/City": "Aldgate East",
@@ -783431,6 +783515,13 @@
     "County": "Oxfordshire",
     "Type & Rating": "Temporary Worker (A rating)",
     "Route": "Charity Worker"
+  },
+  "the do good charity": {
+    "Organisation Name": "The Do Good Charity",
+    "Town/City": "Darlington",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
   },
   "the doctors house": {
     "Organisation Name": "The Doctors House",
@@ -797453,13 +797544,6 @@
     "Type & Rating": "",
     "Route": "Temporary Worker (A rating)"
   },
-  "the simple pharma company uk limited": {
-    "Organisation Name": "The Simple Pharma Company UK Limited",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "the simulator company limited": {
     "Organisation Name": "The Simulator Company Limited",
     "Town/City": "London",
@@ -802789,13 +802873,6 @@
   },
   "thistle dental care  limited": {
     "Organisation Name": "Thistle Dental Care  Limited",
-    "Town/City": "Aberdeen",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "thistle dental lab ltd": {
-    "Organisation Name": "Thistle Dental Lab Ltd",
     "Town/City": "Aberdeen",
     "County": "",
     "Type & Rating": "Worker (A rating)",
@@ -818173,10 +818250,17 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
+  "trio advisory uk ltd": {
+    "Organisation Name": "Trio Advisory UK Ltd",
+    "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
   "trio care agency limited": {
     "Organisation Name": "Trio Care Agency Limited",
     "Town/City": "London",
-    "County": "",
+    "County": "England",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -827758,8 +827842,8 @@
   },
   "uk vine care ltd": {
     "Organisation Name": "UK VINE CARE LTD",
-    "Town/City": "Steyning",
-    "County": "West Sussex",
+    "Town/City": "Hove",
+    "County": "East  Sussex",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -829464,13 +829548,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "uncommon bio limited": {
-    "Organisation Name": "UNCOMMON BIO LIMITED",
-    "Town/City": "Cambridge",
-    "County": "Cambridge",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "uncommon creative studio holding limited": {
     "Organisation Name": "Uncommon Creative Studio Holding Limited",
     "Town/City": "London",
@@ -829719,13 +829796,6 @@
   "uneek events uk ltd": {
     "Organisation Name": "UNEEK EVENTS UK LTD",
     "Town/City": "Coventry",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "uneek forwarding ltd": {
-    "Organisation Name": "UNEEK FORWARDING LTD",
-    "Town/City": "ESSEX",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -837822,13 +837892,6 @@
     "Type & Rating": "Midlothian",
     "Route": "Worker (A rating)"
   },
-  "vale view heights care home": {
-    "Organisation Name": "Vale View Heights Care Home",
-    "Town/City": "Sidmouth",
-    "County": "Devon",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "valefresco limited": {
     "Organisation Name": "Valefresco Limited",
     "Town/City": "Worcestershire",
@@ -839009,6 +839072,13 @@
     "Organisation Name": "VANGMAYI LTD",
     "Town/City": "Washington",
     "County": "Tyne & Wear",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "vangoo ltd": {
+    "Organisation Name": "Vangoo Ltd",
+    "Town/City": "Bristol",
+    "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
@@ -854177,6 +854247,13 @@
   "walker crips group plc": {
     "Organisation Name": "Walker Crips Group PLC",
     "Town/City": "London",
+    "County": "",
+    "Type & Rating": "Worker (A rating)",
+    "Route": "Skilled Worker"
+  },
+  "walker dunnett & co": {
+    "Organisation Name": "Walker Dunnett & Co",
+    "Town/City": "Dundee",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
@@ -884162,13 +884239,6 @@
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
   },
-  "yummy  karachi food limited t/a biryani guys": {
-    "Organisation Name": "Yummy  Karachi Food Limited T/A Biryani Guys",
-    "Town/City": "London",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
   "yummy chicken and pizza ltd": {
     "Organisation Name": "Yummy Chicken and Pizza Ltd",
     "Town/City": "Sutton in Ashfield",
@@ -890521,13 +890591,6 @@
   "zuker property ltd": {
     "Organisation Name": "ZUKER PROPERTY LTD",
     "Town/City": "LONDON",
-    "County": "",
-    "Type & Rating": "Worker (A rating)",
-    "Route": "Skilled Worker"
-  },
-  "zula burger limited": {
-    "Organisation Name": "Zula Burger Limited",
-    "Town/City": "London",
     "County": "",
     "Type & Rating": "Worker (A rating)",
     "Route": "Skilled Worker"
